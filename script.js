@@ -1,30 +1,22 @@
-document.getElementById('submitReservation').addEventListener('click', function () {
-    const form = document.getElementById('reservationForm');
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
 
-    console.log('Reservation Data:', data);
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); 
 
-    alert('Reservation submitted successfully!');
 
-    const modal = bootstrap.Modal.getInstance(document.getElementById('reservationModal'));
-    modal.hide();
-});
+        const name = document.getElementById("contact-name").value;
+        const email = document.getElementById("contact-email").value;
+        const message = document.getElementById("contact-message").value;
 
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault(); 
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
 
-    const contactName = document.getElementById('contact-name').value;
-    const contactEmail = document.getElementById('contact-email').value;
-    const contactMessage = document.getElementById('contact-message').value;
+        alert(`Thank you, ${name}! Your message has been sent.\n\nMessage: ${message}`);
 
-    console.log('Contact Form Data:', {
-        name: contactName,
-        email: contactEmail,
-        message: contactMessage,
+       
+        contactForm.reset();
     });
-
-    alert('Message sent successfully!');
-
-    this.reset();
 });
