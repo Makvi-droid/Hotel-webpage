@@ -1,56 +1,71 @@
 :root {
-    --font: 'Roboto', 'Roboto Mono', 'Poppins', 'Reddit Sans Condensed', 'Open Sans', 'Montserrat';
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('img/bg.jpg');
 }
 
-.carousel-item img {
-    height: 65vh; /* Set a height for images */
-    width: 100%; /* Full width */
-    object-fit: cover; /* Maintain aspect ratio */
+.navbar {
+    background-color: var(--dark-color);
 }
 
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better text contrast */
-    padding: 20px;
-    border-radius: 10px;
-    bottom: 20%; /* Position the caption higher from the bottom */
-    left: 5%; /* Adjust left positioning */
-    right: 5%; /* Adjust right positioning */
-    text-align: left; /* Align text to the left for readability */
+.nav-link {
+    color: #fff;
 }
 
-.carousel-caption h5 {
-    font-size: 2rem; /* Adjust size for better visibility */
-    font-weight: 700; /* Bold font for emphasis */
+.carousel-inner img {
+    height: 600px;
+    object-fit: cover;
 }
 
-.carousel-caption p {
-    font-size: 1.25rem; /* Slightly larger font size */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent controls */
-    border-radius: 50%; /* Rounded controls */
+h2 {
+    margin: 30px 0;
+    color: var(--dark-color);
 }
 
 .card {
-    transition: transform 0.3s;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: transform 0.2s;
 }
 
 .card:hover {
     transform: scale(1.05);
 }
 
-.container {
-    margin-top: 20px;
+footer {
+    background-color: var(--light-color);
+    padding: 20px;
 }
 
-.facility-img {
-    height: 300px; /* Set a fixed height for facility card images */
-    width: 100%; /* Ensure the image covers full width */
-    object-fit: cover; /* Maintain aspect ratio for card images */
+footer .btn {
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; 
+    }
+
+    .carousel-inner img {
+        height: 400px;
+    }
+
+    h2 {
+        font-size: 24px; 
+    }
+
+    .card {
+        margin-bottom: 20px; 
+    }
+
+    footer {
+        text-align: center; 
+    }
 }
