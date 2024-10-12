@@ -1,58 +1,31 @@
-/* General styles */
+:root{
+    --font: 'Roboto', 'Roboto Mono', 'Poppins', 'Reddit Sans Condensed', 'Open Sans'
+    'Montserrat';
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
-/* Hero Section */
-.hero-section {
-    background-image: url('luxury-hotel.jpg'); /* Replace with actual image path */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative;
+.carousel-item img {
+    height: 65vh;
+    object-fit: cover;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.hero-title {
-    font-size: 3rem;
-    font-weight: 700;
+.card {
+    transition: transform 0.3s;
 }
 
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+.card:hover {
+    transform: scale(1.05);
 }
 
-.btn-secondary {
-    padding: 10px 20px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-}
-
-footer .fab {
-    color: #fff;
-}
-
-footer .fab:hover {
-    color: #ddd;
+.container {
+    margin-top: 20px;
 }
